@@ -28,17 +28,3 @@ span {
 .fas {
   color: red;
 }
-
-.profile-picture {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.full-name h2 {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
