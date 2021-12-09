@@ -7,14 +7,15 @@ nav {
   align-content: center;
   align-items: flex-end;
   padding: 0.5em 1.5em 0.5em 1.5em;
+  z-index: 5;
 }
 
 .logo {
   font-family: Bungee, sans-serif;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
-.Write-a-new-tweet {
+.write-a-new-tweet {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
   font-size: 0.75em;
@@ -26,4 +27,18 @@ span {
 
 .fas {
   color: red;
+}
+
+.profile-picture {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.full-name h2 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
