@@ -52,7 +52,16 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iusto debitis vitae minima delectus dicta sed iure quo, nostrum quibusdam, harum corporis. Nesciunt unde tenetur perferendis repellendus quibusdam odio ad!</p>
+      <section class="new-tweet">
+        <form method="post" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
       </main>
     </main>
   </body>
