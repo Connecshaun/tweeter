@@ -1,0 +1,20 @@
+header {
+  height: 400px;
+  background-color: #2b3a6c;
+  background-image: url("../images/arabesque.png");
+}
+
+.profile-picture {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.full-name h2 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
