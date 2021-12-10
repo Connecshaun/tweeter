@@ -1,0 +1,29 @@
+label {
+  padding-top: 20px;
+  display: block;
+}
+
+textarea {
+  background-color: transparent;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom: 2px solid #4056a1;
+  width: 100%;
+  resize: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tweet-button-and-chars {
+  padding-top: 10px;
+  font-family: Bungee, sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-button {
+  border: hidden;
+  background-color: #4056a1;
+  color: white;
+}
