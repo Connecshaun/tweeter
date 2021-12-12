@@ -13,11 +13,15 @@ $(document).ready(function () {
 
 //callback when event "keyup" takes place
 const whenKeysPressed = function () {
+
   const keyed = $(this).val();
-  console.log(keyed)
-  console.log(keyed.length)
+
+  //number of characters typed in <textarea>
+  const numberOfChars = keyed.length;
 
   //to target the counter 
-  console.log($(this).parent().find('.counter'))
+  const theCounter = ($(this).parent().find('.counter'))
+
+  const remainingChars = 140 - numberOfChars
 
 }
