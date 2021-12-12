@@ -10,6 +10,7 @@ $(document).ready(function () {
 
   $typeAreaforTweet.on("keyup", function () {
     console.log($(this).val())
+    console.log($(this).parent().find('.counter'))
   })
 
 });
