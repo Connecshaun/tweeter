@@ -12,8 +12,4 @@ $(document).ready(function () {
     console.log($(this).val())
   })
 
-  // .parent().children()
-
-  // console.log($typeAreaforTweet.parent().children("counter"))
-
 });
