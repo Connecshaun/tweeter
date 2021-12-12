@@ -11,9 +11,13 @@ $(document).ready(function () {
 
 })
 
-
+//callback when event "keyup" takes place
 const whenKeysPressed = function () {
-  console.log($(this).val())
+  const keyed = $(this).val();
+  console.log(keyed)
+  console.log(keyed.length)
+
+  //to target the counter 
   console.log($(this).parent().find('.counter'))
 
 }
