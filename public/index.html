@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/follower-tweets.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -69,14 +70,15 @@
       </form>
     </section>
     <article>
-      <header>
+      <header class="article">
         <div class="tweet-by-follower">* FacePicHere *</div>
         <div class="follower-handle">@user</div>
       </header>
       <textarea wrap="off" rows="1" name="text" id="tweet-text"></textarea>
       <footer>
         <div class="days-ago">10 days ago</div>
-        <div class="tweet-icons">icons</div>
+        <div class="tweet-icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i>
+        </div>
       </footer>
     </article>
   </main>
