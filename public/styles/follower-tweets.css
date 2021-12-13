@@ -1,7 +1,10 @@
 article {
   border: solid 2px #4056a1;
-  box-shadow: 3px 3px #698af7;
   padding: 20px;
+}
+
+.box:hover {
+  box-shadow: 3px 3px #698af7;
 }
 
 .header-article {
