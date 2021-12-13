@@ -1,5 +1,6 @@
 .profile {
-  height: 400px;
+  padding-top:120px;
+  height: 520px;
   background-color: #2b3a6c;
   background-image: url("../images/arabesque.png");
 }
