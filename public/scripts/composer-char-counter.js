@@ -33,4 +33,5 @@ const whenKeysPressed = function () {
 
   } else {
     theCounter.html(remainingChars).removeClass("red");
-  };
+  }
+};
