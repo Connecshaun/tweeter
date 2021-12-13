@@ -14,8 +14,6 @@ $(document).ready(function () {
 //callback when event "keyup" takes place
 const whenKeysPressed = function () {
 
-  const $typeAreaforTweet = $("#tweet-text")
-
   const keyed = $(this).val();
 
   //number of characters typed in <textarea>
