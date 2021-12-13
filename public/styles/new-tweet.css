@@ -17,6 +17,7 @@ textarea {
 
 .tweet-button-and-chars {
   padding-top: 10px;
+  padding-bottom: 20px;
   font-family: Bungee, sans-serif;
   display: flex;
   justify-content: space-between;
