@@ -1,14 +1,16 @@
 article {
   border: solid 2px #4056a1;
+  padding: 20px;
 }
 
-header.article {
+.header-article {
   font-size: 1em;
   display: flex;
   justify-content: space-between;
 }
 
 footer {
+  padding-top: 10px;
   font-size: 0.75em;
   display: flex;
   justify-content: space-between;
@@ -19,6 +21,6 @@ footer {
   padding-left: 10px;
 }
 
-.tweet-icons:hover {
-  background-color:organge;
+.tweet-icons .fas:hover {
+  color:orange;
 }
