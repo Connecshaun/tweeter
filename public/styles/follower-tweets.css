@@ -13,6 +13,24 @@ article {
   justify-content: space-between;
 }
 
+.tweet-by-follower {
+  display: flex;
+}
+
+.follower-pic {
+  max-width: 25%;
+  max-height: auto;
+}
+
+.name {
+  padding-left: 10px;
+  color: rgb(64, 86, 161, 0.4);
+}
+
+.follower-handle {
+  color: rgb(64, 86, 161, 0.4)
+}
+
 footer {
   padding-top: 10px;
   font-size: 0.75em;
