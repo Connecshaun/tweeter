@@ -4,28 +4,63 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 //Eventually we'll capture this from the server
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
+
+const tweetData = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
   },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd"
+    },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+]
 
 
-//define a function createTweetElement that takes in a tweet object 
-//responsible for returning a tweet <article> element containing the entire HTML structure of the tweet.
+
+//take in an array of tweet objects and append each one to the textarea-article
+// loops through tweets
+// calls createTweetElement for each tweet
+// takes return value and appends it to the tweets container
+
 const createTweetElement = function (tweetObject) {
-  const tweet = tweetObject["content"]["text"]
+  const tweet = tweetObject;
+  // const tweet = tweetObject["content"]["text"]
   return tweet;
 }
 
-$(document).ready(function () {
-  const $tweet = createTweetElement(tweetData)
+const renderTweets = function (tweets) {
+  console.log('Tweets:', tweets)
+  tweets.forEach(tweet => {
+    const userTweet = createTweetElement(tweet);
+    console.log('userTweet:', userTweet)
+    return userTweet;
+  })
+}
 
-  $('.textarea-article').append($tweet)
-});
+renderTweets(tweetData)
+
+
+// the renderTweets will need to leverage the createTweetElement function you wrote earlier by passing the tweet object to it, then using the returned jQuery object by appending it to the #tweets-container section.
+
+
+// $(document).ready(function () {
+//   const $tweet = renderTweets(tweetData)
+
+//   $('.textarea-article').append($tweet)
+// });
