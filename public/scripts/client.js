@@ -78,7 +78,7 @@ $(document).ready(function () {
     </header>
     <textarea class="textarea-article" wrap="off" rows="1" name="text" placeholder="enter your tweet here">${tweet.content.text}</textarea>
     <footer>
-      <div class="days-ago">${tweet.created_at}</div>
+      <div class="days-ago">${timeago.format(tweet.created_at)}</div>
       <div class="tweet-icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i>
       </div>
     </footer>
