@@ -22,31 +22,49 @@ $(document).ready(function () {
     });
   });
 
-  const tweetData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
+  // const tweetData = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd"
+  //     },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ]
+
+  // fetch tweets from http://localhost:8080/tweets
+  const loadTweets = function () {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      dataType: "json",
+      success: (res) => {
+        renderTweets(res);
       },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
+      error: (error) => {
+        console.log("this request failed and this was the error", error);
       },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+    });
+
+  }
+  loadTweets()
+
 
 
   // takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet. 
@@ -76,7 +94,7 @@ $(document).ready(function () {
       // return userTweet;
     })
   }
-  renderTweets(tweetData);
+  // renderTweets(tweetData);
 
 
   // const $tweet = renderTweets(tweetData)
