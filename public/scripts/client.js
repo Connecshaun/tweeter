@@ -6,6 +6,21 @@
 //Eventually we'll capture this from the server
 $(document).ready(function () {
 
+  //listen for submit event and prevent default behaviour(page refresh) & create AJAX post request that sends the form data to the server
+  $('.target-form').submit(function (event) {
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $(this).serialize(),
+      success: () => {
+        console.log("the data has been posted and here is the post", $(this).serialize())
+      },
+      error: (error) => {
+        console.log("the post has failed and this is the error", error)
+      },
+    });
+  });
 
   const tweetData = [
     {
@@ -45,7 +60,7 @@ $(document).ready(function () {
     </header>
     <textarea class="textarea-article" wrap="off" rows="1" name="text" placeholder="enter your tweet here">${tweet.content.text}</textarea>
     <footer>
-      <div class="days-ago">${tweet.content.created_at}</div>
+      <div class="days-ago">${tweet.created_at}</div>
       <div class="tweet-icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i>
       </div>
     </footer>
