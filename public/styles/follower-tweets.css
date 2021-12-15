@@ -1,6 +1,7 @@
 article {
   border: solid 2px #4056a1;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 .box:hover {
