@@ -4,63 +4,66 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 //Eventually we'll capture this from the server
+$(document).ready(function () {
 
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
+
+  const tweetData = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd"
+      },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ]
+
+
+  // takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet. 
+  const createTweetElement = function (tweet) {
+    const $tweet = $(`
+    <article class="box">
+    <header class="header-article">
+      <div class="tweet-by-follower"><img class="follower-pic" src="${tweet.user.avatars}"><span
+      class="name">${tweet.user.name}</span></div>
+      <div class="follower-handle">${tweet.user.handle}</div>
+    </header>
+    <textarea class="textarea-article" wrap="off" rows="1" name="text" placeholder="enter your tweet here">${tweet.content.text}</textarea>
+    <footer>
+      <div class="days-ago">${tweet.content.created_at}</div>
+      <div class="tweet-icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i>
+      </div>
+    </footer>
+  </article>`);
+    return $tweet;
   }
-]
+
+  //takes in an array of tweet objects leveraging createTweetElement function by passing the tweet object to it, then append the returned object to tweets container section
+  const renderTweets = function (tweets) {
+    tweets.forEach(tweet => {
+      const $userTweet = createTweetElement(tweet);
+      $('.tweet-container').prepend($userTweet)
+      // return userTweet;
+    })
+  }
+  renderTweets(tweetData);
 
 
+  // const $tweet = renderTweets(tweetData)
 
-//take in an array of tweet objects and append each one to the textarea-article
-// loops through tweets
-// calls createTweetElement for each tweet
-// takes return value and appends it to the tweets container
-
-const createTweetElement = function (tweetObject) {
-  const tweet = tweetObject;
-  // const tweet = tweetObject["content"]["text"]
-  return tweet;
-}
-
-const renderTweets = function (tweets) {
-  console.log('Tweets:', tweets)
-  tweets.forEach(tweet => {
-    const userTweet = createTweetElement(tweet);
-    console.log('userTweet:', userTweet)
-    return userTweet;
-  })
-}
-
-renderTweets(tweetData)
-
-
-// the renderTweets will need to leverage the createTweetElement function you wrote earlier by passing the tweet object to it, then using the returned jQuery object by appending it to the #tweets-container section.
-
-
-// $(document).ready(function () {
-//   const $tweet = renderTweets(tweetData)
-
-//   $('.textarea-article').append($tweet)
-// });
+});
