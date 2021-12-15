@@ -4,11 +4,21 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 //Eventually we'll capture this from the server
+
+
 $(document).ready(function () {
 
-  //listen for submit event and prevent default behaviour(page refresh) & create AJAX post request that sends the form data to the server
+  //listen for submit event and prevent default behaviour(page refresh) & create AJAX post request that sends form data to the server
   $('.target-form').submit(function (event) {
     event.preventDefault();
+    //validate / disallow form submission in the event that the tweet area is empty, or exceeds the 140 character limit.
+    const typedInTweet = $('#tweet-text').val()
+    if (typedInTweet.length > 140) {
+      return alert("Tweet is too long. Please shorten.");
+    } else if (typedInTweet.length === 0 || typedInTweet === null) {
+      return alert("You did not type your tweet")
+    }
+
     $.ajax({
       type: "POST",
       url: "/tweets",
