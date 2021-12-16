@@ -41,6 +41,10 @@ textarea {
   color: white;
 }
 
+.tweet-button:hover {
+  box-shadow: 3px 3px 5px #698af7;
+}
+
 .red {
   color: #e63946;
 }
