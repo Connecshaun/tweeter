@@ -1,9 +1,21 @@
+.error {
+  font-size: .75em;
+  color: red;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid red;
+  background-color: pink;
+  display: none;
+}
+
 label {
   padding-top: 20px;
   display: block;
 }
 
 textarea {
+  padding-top: 10px;
+  font-size: .875em;
   background-color: transparent;
   border-top: hidden;
   border-left: hidden;
