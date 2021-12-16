@@ -13,21 +13,32 @@ $(document).ready(function () {
 
     //validate tweet
     const typedInTweet = $('#tweet-text').val()
+    const errorPopUp = $('.error')
     if (typedInTweet.length > 140) {
-      return alert("Tweet is too long. Please shorten.");
+      errorPopUp.empty();
+      return errorPopUp.slideDown("swing", () => {
+        errorPopUp.append("<span>\u26A0 Your tweet is too long. Please shorten. \u26A0</span>")
+      })
     } else if (typedInTweet.length === 0 || typedInTweet === null) {
-      return alert("You did not type your tweet.")
-    }
+      errorPopUp.empty();
+      return errorPopUp.slideDown("swing", () => {
+        errorPopUp.append("<span>\u26A0 You did not type your tweet. \u26A0</span>")
+      })
+    } else {
+      errorPopUp.slideUp("swing")
 
-    //After posting tweet, tweet is loaded via loadTweets()
-    const data = $(this).serialize();
-    $.post("/tweets", data)
-      .then(() => {
-        loadTweets()
-      })
-      .catch(err => {
-        console.log(err.message)
-      })
+      //After posting tweet, tweet is loaded via loadTweets()
+      const data = $(this).serialize();
+      $.post("/tweets", data)
+        .then(() => {
+          loadTweets()
+        })
+        .catch(err => {
+          console.log(err.message)
+        })
+
+
+    }
   });
 
 
