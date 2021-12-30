@@ -24,10 +24,6 @@ body {
   font-size: 24px;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
 .container {
   width: 90%;
   padding: 2%;
@@ -36,8 +32,8 @@ body {
   background-color: #f4f1ec;
 }
 
- @media only screen and (min-width: 768px) and (max-width: 1024px) {
-   .for-min-and-max-screen {
+ @media only screen and (min-width: 768px) {
+   .for-min-width-screen {
      display: flex;
      align-content: center; 
    }
