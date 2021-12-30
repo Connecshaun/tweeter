@@ -35,3 +35,46 @@ body {
   margin-right: auto;
   background-color: #f4f1ec;
 }
+
+
+ /* Tablet & Desktop: minimum width of 768px to maximum width of 1024px */
+
+ /* @media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .navigation {
+
+   }
+  .profile {
+    margin-top: 15%;
+    float: left;
+    position: absolute;
+    width: 40%;
+  }
+  .container {
+    position: relative;
+    margin-top: 15%;
+    z-index: 3;
+    width: 60%;
+    float: right;
+  }
+} */
+
+ /* Tablet & Desktop: minimum width of 768px to maximum width of 1024px */
+ @media only screen and (min-width: 768px) and (max-width: 1024px) {
+   .for-min-and-max-screen {
+     display: flex;
+     align-content: center; 
+   }
+  .profile {
+    width: 40%;
+    display: inline-flex;
+    flex-direction: column;
+  }
+  .container {
+    display: inline-flex;
+    flex-direction: column;
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 125px;
+  }
+}
