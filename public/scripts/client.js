@@ -33,12 +33,15 @@ $(document).ready(function () {
         .then(() => {
           loadTweets()
         })
+        //clear data after tweet submitted
+        .then(()=> {
+          $('#tweet-text').val('');
+        })
         .catch(err => {
           console.log(err.message)
         })
+    } 
 
-
-    }
   });
 
 
