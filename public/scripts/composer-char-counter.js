@@ -1,5 +1,4 @@
 //target the <textarea> element
-
 //register event to detect correct length of the input and update the counter
 $(document).ready(function() {
   const $typeAreaforTweet = $("#tweet-text");
@@ -22,7 +21,6 @@ const whenKeysPressed = function() {
   //if number of characters goes below 0, red class is activated and counter number turns the color of red
   if (remainingChars < 0) {
     theCounter.html(remainingChars).addClass("red");
-
   } else {
     theCounter.html(remainingChars).removeClass("red");
   }
