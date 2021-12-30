@@ -30,6 +30,11 @@ While the application is responsive in design, media queries will be required in
 ![Error message tells the user if a tweet is too long upon submission](https://github.com/Connecshaun/tweeter/blob/master/docs/Tweet_Too_Long.png?raw=true)
 
 
+:desktop_computer: Here is what tweeter will look like on a larger screen - size 768px and above.
+
+![Application GUI when viewed at screen size of 768 pixels or above](https://github.com/Connecshaun/tweeter/blob/master/docs/Tweeter_768andUp.png?raw=true)
+
+
 ## Getting Started
 1. Install dependencies using the `npm install` command.
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
