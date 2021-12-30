@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta Information -->
-  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   <title>Tweeter - Home Page</title>
 
@@ -34,8 +34,6 @@
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   <!-- External sources -->
-  <!-- <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.24/vue.cjs.js" /> -->
-
   <script src="https://kit.fontawesome.com/f0e22d0bd3.js" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
@@ -51,37 +49,38 @@
     </div>
   </nav>
 
+  <!-- Profile area w/name & avatar -->
   <section class="for-min-and-max-screen">
-  <header class="profile">
-    <div class="profile-picture">
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div class="full-name">
-      <h2>Shaun Robinson</h2>
-    </div>
-  </header>
+    <header class="profile">
+      <div class="profile-picture">
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div class="full-name">
+        <h2>Shaun Robinson</h2>
+      </div>
+    </header>
 
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <label for="tweet-text" class="error">
-      </label>
-      <form class="target-form" method="post" action="/tweets">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea wrap="off" rows="1" name="text" id="tweet-text"></textarea>
-        <div class="tweet-button-and-chars">
-          <button class="tweet-button" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <label for="tweet-text" class="error">
+        </label>
+        <form class="target-form" method="post" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea wrap="off" rows="1" name="text" id="tweet-text"></textarea>
+          <div class="tweet-button-and-chars">
+            <button class="tweet-button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
 
-    <section class="tweet-container">
-    </section>
-  </main>
-</section>
+      <section class="tweet-container">
+      </section>
+    </main>
+  </section>
 </body>
 
 </html>
