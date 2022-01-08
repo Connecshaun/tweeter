@@ -30,20 +30,27 @@ $(document).ready(function() {
       //After posting tweet, tweet is loaded via loadTweets()
       const data = $(this).serialize();
       $.post("/tweets", data)
-        .then(() => {
-          loadTweets();
-        })
         //clear data after tweet submitted
-        .then(()=> {
+        .then(() => {
           $('#tweet-text').val('');
+        })
+        .then(() => {
+          $(".counter").val(140);
+          renderLatestTweet();
         })
         .catch(err => {
           console.log(err.message);
         });
     }
-
   });
 
+  //just grabing most recent tweet
+  const renderLatestTweet = function() {
+    $.get("/tweets")
+      .then(data => {
+        renderTweets([data[data.length - 1]]);
+      });
+  };
 
   // fetch tweets from http://localhost:8080/tweets
   const loadTweets = function() {
@@ -54,6 +61,11 @@ $(document).ready(function() {
   };
   loadTweets();
 
+  // for (const tweet of data) {
+  //   if (!tweet.user.name && !tweet.content.text && !tweet.created_at) {
+  //     renderTweets(data);
+  //   }
+  // }
 
   // takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet
   const createTweetElement = function(tweet) {
@@ -76,9 +88,9 @@ $(document).ready(function() {
 
   //takes in an array of tweet objects leveraging createTweetElement function by passing the tweet object to it, then append the returned object to tweets container section
   const renderTweets = function(tweets) {
-    tweets.forEach(tweet => {
+    for (let tweet of tweets) {
       const $userTweet = createTweetElement(tweet);
       $('.tweet-container').prepend($userTweet);
-    });
+    }
   };
 });
